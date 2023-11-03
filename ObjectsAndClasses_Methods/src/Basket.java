@@ -4,11 +4,13 @@ public class Basket {
     private String items = "";
     private int totalPrice = 0;
     private int limit;
-
+    private int totalWeight = 0;
+    public void add(String name, int price, int count, double weight);
     public Basket() {
         increaseCount(1);
         items = "Список товаров:";
         this.limit = 1000000;
+        add.totalWeight(weight,0);
     }
 
     public Basket(int limit) {
@@ -66,7 +68,9 @@ public class Basket {
     public boolean contains(String name) {
         return items.contains(name);
     }
-
+    public double getTotalWeight(){
+    return totalWeight;
+    }
     public void print(String title) {
         System.out.println(title);
         if (items.isEmpty()) {
