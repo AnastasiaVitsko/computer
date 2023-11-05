@@ -8,7 +8,7 @@ public static void main(String[] args) {
  
 }
 class Arithmetic {
-    private int a;
+    private int n;
     private int b;
  
     public Arithmetic(int a, int b) {
