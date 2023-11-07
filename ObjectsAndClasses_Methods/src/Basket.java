@@ -15,10 +15,7 @@ public class Basket {
 public void add(String name, int price, int count, double weight) {
     add(name,price,count)
     totalWeight += weight;
-    public void add(String name, int price, int count) {
-    }
-    public void add(String name, int price, int count, double weight) {
-    }
+   
 }
  
 public double getTotalWeight() {
