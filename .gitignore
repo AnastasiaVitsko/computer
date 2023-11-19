@@ -1,3 +1,34 @@
+
+### IntelliJ IDEA ###
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+=======
 # Created by https://www.gitignore.io/api/java,linux,macos,maven,windows,jetbrains
 # Edit at https://www.gitignore.io/?templates=java,linux,macos,maven,windows,jetbrains
 
@@ -73,7 +104,6 @@ cmake-build-*/
 *.iws
 
 # IntelliJ
-out/
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
@@ -131,7 +161,6 @@ fabric.properties
 
 ### macOS ###
 # General
-.DS_Store
 .AppleDouble
 .LSOverride
 
@@ -199,3 +228,4 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/java,linux,macos,maven,windows,jetbrains
 **/.idea/
 **/target/
+
