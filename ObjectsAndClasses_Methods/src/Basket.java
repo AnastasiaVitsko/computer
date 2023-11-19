@@ -2,13 +2,14 @@ public class Basket {
 
     private static int count = 0;
     private String items = "";
-    private int totalPrice = 0;
+    private static int totalItemsCount = 0;
+    private static int totalItemsPrice = 0;
     private int limit;
 
     public Basket() {
         increaseCount(1);
         items = "Список товаров:";
-        this.limit = 1000000;
+        this.limit = 1000;
     }
 
     public Basket(int limit) {
@@ -19,7 +20,8 @@ public class Basket {
     public Basket(String items, int totalPrice) {
         this();
         this.items = this.items + items;
-        this.totalPrice = totalPrice;
+        totalItemsCount += 1;
+        totalItemsPrice += totalPrice;
     }
 
     public static int getCount() {
@@ -27,7 +29,29 @@ public class Basket {
     }
 
     public static void increaseCount(int count) {
-        Basket.count = Basket.count + count;
+        Basket.count += count;
+    }
+
+    public static int getTotalItemsCount() {
+        return totalItemsCount;
+    }
+
+    public static int getTotalItemsPrice() {
+        return totalItemsPrice;
+    }
+
+    public static double averageProductPrice() {
+        if (totalItemsCount == 0) {
+            return 0;
+        }
+        return (double) totalItemsPrice / totalItemsCount;
+    }
+
+    public static double averageBasketCost() {
+        if (count == 0) {
+            return 0;
+        }
+        return (double) totalItemsPrice / count;
     }
 
     public void add(String name, int price) {
@@ -40,27 +64,29 @@ public class Basket {
             error = true;
         }
 
-        if (totalPrice + count * price >= limit) {
+        if (totalItemsPrice + count * price >= limit) {
             error = true;
         }
 
         if (error) {
-            System.out.println("Error occured :(");
+            System.out.println("Error occurred :(");
             return;
         }
 
         items = items + "\n" + name + " - " +
-            count + " шт. - " + price;
-        totalPrice = totalPrice + count * price;
+                count + " шт. - " + price;
+        totalItemsCount += count;
+        totalItemsPrice += count * price;
     }
 
     public void clear() {
         items = "";
-        totalPrice = 0;
+        totalItemsPrice = 0;
+        totalItemsCount = 0;
     }
 
     public int getTotalPrice() {
-        return totalPrice;
+        return totalItemsPrice;
     }
 
     public boolean contains(String name) {
